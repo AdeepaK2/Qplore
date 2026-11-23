@@ -6,10 +6,8 @@ export default defineConfig({
     apiUrl: "http://localhost:8080/api",
     adminUsername: "admin",
   },
-  // Secrets – read in tests with cy.env(["name"]) (kept out of the browser until asked for)
-  env: {
-    adminPassword: "Admin@123",
-  },
+  // Secrets (e.g. adminPassword) are NOT stored here.
+  // They live in cypress.env.json (git-ignored) and are read with cy.env(["name"]).
   e2e: {
     baseUrl: "http://localhost:8080",
     specPattern: "src/test/**/*.cy.ts",
