@@ -1,0 +1,24 @@
+{
+  "name": "qplore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QPlore - a small, deliberately buggy plant-store clone for practising testing.",
+  "scripts": {
+    "start:app": "tsx src/main/backend/server.ts",
+    "reveal-bugs": "node docs/defect-reports/answer-key/reveal.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "js-yaml": "^4.1.0",
+    "swagger-ui-express": "^5.0.1",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.0",
+    "@types/swagger-ui-express": "^4.1.7",
+    "cypress": "^16.3.0",
+    "typescript": "^7.0.2"
+  }
+}

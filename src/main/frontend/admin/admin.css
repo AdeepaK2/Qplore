@@ -1,0 +1,36 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f4f6f4; color: #1f2a1f; }
+header.topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: #2e6b3a; color: #fff; }
+header.topbar .brand { font-weight: 700; font-size: 18px; }
+header.topbar .user { display: flex; gap: 12px; align-items: center; }
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+h1 { font-size: 24px; margin: 0 0 16px; }
+.card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.login-card { max-width: 380px; margin: 80px auto; }
+label { display: block; font-weight: 600; margin: 12px 0 4px; }
+input, select { width: 100%; padding: 8px 10px; border: 1px solid #b9c4b9; border-radius: 6px; font-size: 14px; }
+.field-error { color: #c62828; font-size: 13px; min-height: 18px; margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; text-decoration: none; }
+.btn-primary { background: #2e6b3a; color: #fff; }
+.btn-secondary { background: #e0e6e0; color: #1f2a1f; }
+.btn-danger { background: #c62828; color: #fff; }
+.btn-light { background: #fff; color: #2e6b3a; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.toolbar { display: grid; grid-template-columns: 2fr 1.4fr 1fr 1fr auto auto; gap: 8px; align-items: end; margin-bottom: 16px; }
+.toolbar label { margin-top: 0; }
+.actions-row { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e3e8e3; }
+th { background: #eef3ee; }
+td.actions { display: flex; gap: 6px; }
+.empty { text-align: center; color: #5c6b5c; padding: 24px; }
+.pager { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.flash { padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; display: none; }
+.flash.success { display: block; background: #e3f4e5; color: #1b5e20; border: 1px solid #a5d6a7; }
+.flash.error { display: block; background: #fdecea; color: #b71c1c; border: 1px solid #ef9a9a; }
+.form-actions { display: flex; gap: 8px; margin-top: 20px; }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: none; align-items: center; justify-content: center; }
+.modal-backdrop.open { display: flex; }
+.modal { background: #fff; border-radius: 8px; padding: 20px; width: 360px; }
+.modal p { margin: 0 0 16px; }
+.modal .buttons { display: flex; justify-content: flex-end; gap: 8px; }

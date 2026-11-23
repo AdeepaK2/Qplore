@@ -1,0 +1,23 @@
+{
+  "users": [
+    { "id": 1, "username": "admin", "password": "Admin@123", "fullName": "System Admin", "role": "ADMIN", "active": true },
+    { "id": 2, "username": "user", "password": "User@123", "fullName": "Nimal Perera", "role": "CLIENT", "active": true },
+    { "id": 3, "username": "kamala", "password": "Kamala@123", "fullName": "Kamala Silva", "role": "CLIENT", "active": false }
+  ],
+  "categories": [
+    { "id": 1, "name": "Indoor", "parentId": null },
+    { "id": 2, "name": "Outdoor", "parentId": null },
+    { "id": 3, "name": "Succulents", "parentId": 1 },
+    { "id": 4, "name": "Ferns", "parentId": 1 },
+    { "id": 5, "name": "Herbs", "parentId": 2 },
+    { "id": 6, "name": "Seasonal", "parentId": null },
+    { "id": 7, "name": "Climbers", "parentId": 1 }
+  ],
+  "plants": [
+    { "id": 1, "name": "Aloe Vera", "price": 450.0, "quantity": 12, "categoryId": 3 },
+    { "id": 2, "name": "Jade Plant", "price": 650.0, "quantity": 5, "categoryId": 3 },
+    { "id": 3, "name": "Boston Fern", "price": 1200.0, "quantity": 3, "categoryId": 4 },
+    { "id": 4, "name": "Basil", "price": 150.0, "quantity": 0, "categoryId": 5 },
+    { "id": 5, "name": "Mint", "price": 120.5, "quantity": 1, "categoryId": 5 }
+  ]
+}

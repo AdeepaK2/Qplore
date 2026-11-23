@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QPlore Admin - Categories</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">QPlore Admin</span>
+    <span class="user">
+      <span id="current-user"></span>
+      <button id="logout-btn" class="btn btn-light" type="button">Logout</button>
+    </span>
+  </header>
+
+  <main>
+    <h1>Categories</h1>
+    <div id="flash" class="flash"></div>
+
+    <div class="card">
+      <div class="actions-row">
+        <a id="add-category-btn" class="btn btn-primary" href="/admin/categories/add">Add Category</a>
+      </div>
+
+      <div class="toolbar">
+        <div>
+          <label for="search">Search by name</label>
+          <input id="search" type="text" placeholder="e.g. Indoor" />
+        </div>
+        <div>
+          <label for="parent-filter">Parent</label>
+          <select id="parent-filter"><option value="">All</option></select>
+        </div>
+        <div>
+          <label for="sort-by">Sort by</label>
+          <select id="sort-by">
+            <option value="id">ID</option>
+            <option value="name">Name</option>
+            <option value="parent">Parent</option>
+          </select>
+        </div>
+        <div>
+          <label for="sort-dir">Order</label>
+          <select id="sort-dir">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+        <button id="search-btn" class="btn btn-primary" type="button">Search</button>
+        <button id="reset-btn" class="btn btn-secondary" type="button">Reset</button>
+      </div>
+
+      <table id="categories-table">
+        <thead>
+          <tr><th>ID</th><th>Name</th><th>Parent</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="empty-message" class="empty" hidden>No category found</div>
+
+      <div class="pager">
+        <button id="prev-page" class="btn btn-secondary" type="button">Previous</button>
+        <span id="page-info"></span>
+        <button id="next-page" class="btn btn-secondary" type="button">Next</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="confirm-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal">
+      <p id="confirm-text"></p>
+      <div class="buttons">
+        <button id="confirm-no" class="btn btn-secondary" type="button">Cancel</button>
+        <button id="confirm-yes" class="btn btn-danger" type="button">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin/assets/common.js"></script>
+  <script src="/admin/assets/categories.js"></script>
+</body>
+</html>

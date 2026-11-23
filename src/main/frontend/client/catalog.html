@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QPlore - Plant Catalog</title>
+  <link rel="stylesheet" href="/client/assets/client.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">QPlore</span>
+    <span class="guest">Browsing as <strong>Guest</strong></span>
+  </header>
+
+  <main>
+    <h1>Plant Catalog</h1>
+    <div id="info" class="info" hidden></div>
+
+    <div class="toolbar">
+      <input id="search" type="text" placeholder="Search plants by name" aria-label="Search plants by name" />
+      <button id="search-btn" class="btn btn-primary" type="button">Search</button>
+    </div>
+
+    <div id="plant-grid" class="grid"></div>
+    <div id="empty-message" class="empty" hidden>No plants found</div>
+  </main>
+
+  <script src="/client/assets/catalog.js"></script>
+</body>
+</html>

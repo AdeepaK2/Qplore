@@ -1,0 +1,32 @@
+Test Identifier,Test Title,Test Description,Precondition,Test Steps,Test Data,Expected Result,Actual Results,UI / API,Status,Tester,Defect ID
+TC_API_CAT_001,Verify Admin can create a main category when a valid category name is sent with no parent,,"1. App running and data reset (POST /api/test/reset)
+2. Admin token obtained from POST /api/admin/auth/login
+3. No category named ""Cacti"" exists","1. Send POST /api/admin/categories with headers Authorization: Bearer <admin token> and Content-Type: application/json, and the test data as the body","{""name"":""Cacti"",""parentId"":null}","1.1 Validate status code is 201
+1.2 Validate success is true
+1.3 Validate message is ""Category created successfully""
+1.4 Validate data.name is ""Cacti"" and data.parentId is null",,API,Not Executed,224110P,
+TC_API_CAT_002,Verify Admin cannot create a main category when the category name has 2 characters,,"1. App running and data reset
+2. Admin token obtained","1. Send POST /api/admin/categories with the admin token and the test data","{""name"":""Ab"",""parentId"":null}","1.1 Validate status code is 400
+1.2 Validate errors.name is ""Category name must be between 3 and 10 characters""",,API,Not Executed,224110P,
+TC_API_CAT_003,Verify Client cannot view the category list when a Client token is used,,"1. App running and data reset
+2. Client token obtained from POST /api/client/public/auth/login (user / User@123)","1. Send GET /api/admin/categories with header Authorization: Bearer <client token>",N/A,"1.1 Validate status code is 403
+1.2 Validate message is ""You do not have permission to access this resource""",,API,Not Executed,224110P,
+TC_UI_CAT_001,Verify Admin can create a sub-category when a main category is selected as the parent,,"1. Data reset
+2. Logged in to the Admin App as admin
+3. Browser at /admin/categories","1. Click Add Category
+2. Enter the category name from the test data
+3. Select the parent from the test data
+4. Click Save","Category name: Bonsai
+Parent: Outdoor","4.1 Validate the user is redirected to /admin/categories
+4.2 Validate the message ""Category created successfully"" is shown
+4.3 Validate the list shows Bonsai with parent Outdoor",,UI,Not Executed,224110P,
+TC_UI_CAT_002,Verify Admin sees a validation message when saving a category without a name,,"1. Logged in to the Admin App as admin
+2. Browser at /admin/categories/add","1. Leave Category name empty
+2. Click Save",Category name: (empty),"2.1 Validate the user stays on /admin/categories/add
+2.2 Validate ""Category name is required"" is shown below Category name",,UI,Not Executed,224110P,
+TC_UI_CAT_003,Verify the category is kept when Admin cancels the delete confirmation,,"1. Data reset
+2. Logged in to the Admin App as admin
+3. Browser at /admin/categories","1. Click Delete on the Seasonal row
+2. Click Cancel",Category: Seasonal,"1.1 Validate the confirmation ""Are you sure you want to delete Seasonal?"" is shown
+2.1 Validate the confirmation closes
+2.2 Validate Seasonal is still listed",,UI,Not Executed,224110P,

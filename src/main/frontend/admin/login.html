@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QPlore Admin - Login</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css" />
+</head>
+<body>
+  <main>
+    <div class="card login-card">
+      <h1>Admin Login</h1>
+      <div id="flash" class="flash"></div>
+      <form id="login-form" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" />
+        <div id="username-error" class="field-error"></div>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" />
+        <div id="password-error" class="field-error"></div>
+
+        <div id="form-error" class="field-error"></div>
+        <div class="form-actions">
+          <button id="login-btn" type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <script src="/admin/assets/common.js"></script>
+  <script>
+    if (Auth.token()) window.location.replace("/admin/categories");
+    Flash.showPending();
+
+    document.getElementById("login-form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      ["username-error", "password-error", "form-error"].forEach((id) => (document.getElementById(id).textContent = ""));
+
+      let valid = true;
+      if (!username.trim()) {
+        document.getElementById("username-error").textContent = "Username is required";
+        valid = false;
+      }
+      if (!password) {
+        document.getElementById("password-error").textContent = "Password is required";
+        valid = false;
+      }
+      if (!valid) return;
+
+      const { status, body } = await api("POST", "/api/admin/auth/login", { username, password });
+      if (status === 200) {
+        Auth.save(body.data.token, body.data.username);
+        window.location.href = "/admin/categories";
+      } else if (body.errors) {
+        Object.entries(body.errors).forEach(([field, msg]) => {
+          const el = document.getElementById(field + "-error");
+          if (el) el.textContent = msg;
+        });
+      } else {
+        document.getElementById("form-error").textContent = body.message;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# QPlore training app configuration
+# Only the values below are meant to be changed.
+server:
+  port: 8080
+
+app:
+  name: QPlore
+  version: 1.0.0
+  # Lifetime of a login token, in hours (no refresh tokens)
+  token-ttl-hours: 8
+  # Seed data loaded at start-up and on POST /api/test/reset
+  seed-file: seed.json

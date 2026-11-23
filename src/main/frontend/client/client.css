@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f7faf6; color: #1f2a1f; }
+header.topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: #3f8f4e; color: #fff; }
+header.topbar .brand { font-weight: 700; font-size: 18px; }
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+h1 { font-size: 24px; margin: 0 0 16px; }
+.toolbar { display: flex; gap: 8px; margin-bottom: 16px; }
+.toolbar input { flex: 1; padding: 8px 10px; border: 1px solid #b9c4b9; border-radius: 6px; font-size: 14px; }
+.btn { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+.btn-primary { background: #3f8f4e; color: #fff; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.plant-card { background: #fff; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); display: flex; flex-direction: column; gap: 8px; }
+.plant-name { font-weight: 700; font-size: 16px; }
+.plant-category { color: #5c6b5c; font-size: 13px; }
+.plant-price { font-weight: 600; }
+.stock-badge { align-self: flex-start; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; color: #fff; }
+.badge-out { background: #c62828; }
+.badge-low { background: #ef6c00; }
+.badge-in { background: #2e7d32; }
+.empty { text-align: center; color: #5c6b5c; padding: 24px; }
+.info { padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; background: #e8f0fe; color: #1a3e8a; border: 1px solid #a8c1f5; }

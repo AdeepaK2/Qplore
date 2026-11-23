@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QPlore Admin - Add Category</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css" />
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">QPlore Admin</span>
+    <span class="user">
+      <span id="current-user"></span>
+      <button id="logout-btn" class="btn btn-light" type="button">Logout</button>
+    </span>
+  </header>
+
+  <main>
+    <h1 id="page-heading">Add Category</h1>
+    <div id="flash" class="flash"></div>
+
+    <div class="card">
+      <form id="category-form" novalidate>
+        <label for="name">Category name</label>
+        <input id="name" name="name" type="text" />
+        <div id="name-error" class="field-error"></div>
+
+        <label for="parent">Parent category</label>
+        <select id="parent" name="parent">
+          <option value="">None (main category)</option>
+        </select>
+        <div id="parent-error" class="field-error"></div>
+
+        <div class="form-actions">
+          <button id="save-btn" class="btn btn-primary" type="submit">Save</button>
+          <a id="cancel-btn" class="btn btn-secondary" href="/admin/categories">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="/admin/assets/common.js"></script>
+  <script src="/admin/assets/category-form.js"></script>
+</body>
+</html>
